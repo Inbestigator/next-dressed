@@ -12,8 +12,8 @@ importers:
         specifier: npm:@jsr/dressed__cmd@^0.1.10
         version: '@jsr/dressed__cmd@0.1.10'
       '@dressed/dressed':
-        specifier: npm:@jsr/dressed__dressed@^1.1.4
-        version: '@jsr/dressed__dressed@1.1.4'
+        specifier: npm:@jsr/dressed__dressed@^1.2.0
+        version: '@jsr/dressed__dressed@1.2.0'
       next:
         specifier: 15.2.5
         version: 15.2.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -257,6 +257,9 @@ packages:
 
   '@jsr/dressed__dressed@1.1.4':
     resolution: {integrity: sha512-ZjvF+ZKh3iJc4O6xIAKIuE4xqWhZogPTLZXKGPYf74hXDQvs080NMw2Cahs/Dd9jZyig7gh5KzD2Osn2CJnqeQ==, tarball: https://npm.jsr.io/~/11/@jsr/dressed__dressed/1.1.4.tgz}
+
+  '@jsr/dressed__dressed@1.2.0':
+    resolution: {integrity: sha512-+L/TzhQC6cu+/dUHSVQxqsBq4zX53yutfzxY1efe/3mc04RQQ086TQtZTkidRCUIPuFrlhNLNipFTQU6c+QiWQ==, tarball: https://npm.jsr.io/~/11/@jsr/dressed__dressed/1.2.0.tgz}
 
   '@jsr/std__fmt@1.0.6':
     resolution: {integrity: sha512-oPA9iNSb2Cg50Les9HUxpZ1Iw6To6yn2dawJ/SiO9SRMHE0Fh7EbRw5TLz9iwkrAfoWg9NfqRYkyNkDAg0B2ZQ==, tarball: https://npm.jsr.io/~/11/@jsr/std__fmt/1.0.6.tgz}
@@ -2123,6 +2126,17 @@ snapshots:
       ora: 8.2.0
 
   '@jsr/dressed__dressed@1.1.4':
+    dependencies:
+      '@jsr/std__fmt': 1.0.6
+      '@jsr/svarta__walk-it': 5.0.1
+      discord-api-types: 0.37.119
+      dotenv: 16.4.7
+      fastify: 5.2.2
+      magic-bytes.js: 1.10.0
+      ora: 8.2.0
+      tweetnacl: 1.0.3
+
+  '@jsr/dressed__dressed@1.2.0':
     dependencies:
       '@jsr/std__fmt': 1.0.6
       '@jsr/svarta__walk-it': 5.0.1
