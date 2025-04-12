@@ -1,13 +1,10 @@
 import { createHandlers, handleRequest } from "@dressed/dressed/server";
 import { commandData, componentData } from "@/../bot.gen";
-import type { NextFetchEvent } from "next/server";
+import { waitUntil } from "@vercel/functions";
 
 const { runCommand, runComponent } = createHandlers(commandData, componentData);
 
-export async function POST(
-    req: Request,
-    event: NextFetchEvent,
-) {
+export async function POST(req: Request) {
     return handleRequest(
         {
             headers: {
@@ -18,7 +15,7 @@ export async function POST(
             },
             text: await req.text(),
         },
-        (i) => event.waitUntil(runCommand(i) as Promise<unknown>),
-        (i) => event.waitUntil(runComponent(i) as Promise<unknown>),
+        (i) => waitUntil(runCommand(i) as Promise<unknown>),
+        (i) => waitUntil(runComponent(i) as Promise<unknown>),
     );
 }
