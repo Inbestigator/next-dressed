@@ -1,11 +1,12 @@
 import { createHandlers, handleRequest } from "@dressed/dressed/server";
 import { commandData, componentData } from "@/../bot.gen";
+import type { NextFetchEvent } from "next/server";
 
 const { runCommand, runComponent } = createHandlers(commandData, componentData);
 
 export async function POST(
     req: Request,
-    res: { waitUntil: (p: unknown) => void },
+    event: NextFetchEvent,
 ) {
     return handleRequest(
         {
@@ -17,7 +18,7 @@ export async function POST(
             },
             text: await req.text(),
         },
-        (i) => res.waitUntil(runCommand(i)),
-        (i) => res.waitUntil(runComponent(i)),
+        (i) => event.waitUntil(runCommand(i) as Promise<unknown>),
+        (i) => event.waitUntil(runComponent(i) as Promise<unknown>),
     );
 }
